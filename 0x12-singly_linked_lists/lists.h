@@ -1,15 +1,16 @@
 #ifndef _LISTS_
 #define _LISTS_
 
-#include <stddef.h>
-int _putchar(char character);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * struct list_s - singly linked list
- * @str: string - mallo string
- * @len: length of the string
- * @next: points to the next node
- * Description: singly linked list node structure
+ * struct list_s - singly linked lists
+ * @str:string
+ * @len:length
+ * @next:next node
+ * Description:signly linked list node structure
  */
 typedef struct list_s
 {
