@@ -1,17 +1,16 @@
-#include"lists.h"
+#include "lists.h"
 
 /**
- *free_listint-free
- *@head:headofalist
- *Return:notincluded
+ * free_listint - free list
+ * @head: header
  */
-voidfree_listint(listint_t *head)
+void free_listint(listint_t *head)
 {
 	listint_t *temp;
 
-	while((temp = head) != NULL)
+	while ((temp = head) != NULL)
 	{
-		head = head-> next;
-		free(temp);
+	head = head->next;
+	free(temp);
 	}
 }
