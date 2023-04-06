@@ -1,67 +1,22 @@
-#include "lists.h"
+#include"lists.h"
 
 /**
- * free_listp - free
- * @head: head
- * Return: no return
+ *print_listint - checkdecription
+ *Description: prints all the elements
+ *@h: head
+ *Return: number of nodes
  */
 
-void free_listp(listp_t **head)
+size_t print_listint(const listint_t *h)
 {
-	listp_t *prev;
-	listp_t *next;
-
-	if (head != NULL)
-	{
-		next = *head;
-		while ((temp = prev) != NULL)
-		{
-			next = next->next;
-			free(prev);
-		}
-		*head = NULL;
-	}
-}
-
-/**
- * print_listint_safe - prints list
- * @head: head
- * Return: number of nodes
- */
-size_t print_listint_safe(const listint_t *head)
-{
+	const listint_t *cursor = h;
 	size_t count = 0;
-	listp_t *hptr, *new, *add;
-	hptr = NULL;
 
-	while (head != NULL)
+	while (cursor != NULL)
 	{
-		new = malloc(sizeof(listp_t));
-
-		if (new == NULL)
-			exit(98);
-
-		new->p = (void *)head;
-		new->next = hptr;
-		hptr = new;
-
-		add = hptr;
-
-		while (add->next != NULL)
-		{
-			add = add->next;
-			if (head == add->p)
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_listp(&hptr);
-				return (count);
-			}
-		}
-
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		count++;	}
-
-	free_listp(&hptr);
+		printf("%d\n", cursor->n);
+		count += 1;
+		cursor = cursor->next;
+	}
 	return (count);
 }
